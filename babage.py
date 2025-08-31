@@ -41,17 +41,17 @@ coeficientes = [4, 3, 2, 9, 2]
 eixo_x = list(range(9))
 eixo_y = [polinomio(x, coeficientes) for x in eixo_x]
 
-diffs = babbage(eixo_y, len(coeficientes) - 1)
+tabela_babage = babbage(eixo_y, len(coeficientes) - 1)
 
 print("Valores de x:", eixo_x)
 print("Valores de y:", eixo_y)
 print("\nTabela de Diferencas (original):")
-for i, linha in enumerate(diffs):
+for i, linha in enumerate(tabela_babage):
     print(f"Diferenca {i}: {linha}")
 
 
 x_alvo = 9
-tabela_nova = maquina_diferencial(diffs, eixo_x, x_alvo)
+tabela_nova = maquina_diferencial(tabela_babage, eixo_x, x_alvo)
 print(f"\nTabela de Diferencas (atualizada ate x= {x_alvo}):")
 
 for i, linha in enumerate(tabela_nova):
